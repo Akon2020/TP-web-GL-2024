@@ -5,7 +5,7 @@ $matricule = $_POST['matricule'];
 $name = $_POST['name'];
 $second_name = $_POST['second_name'];
 $birth_date = $_POST['birth_date'];
-$mutual_number = $_POST['mutual_number'];
+$mutual_number = isset($_POST['mutual']) && $_POST['mutual'] == 'Oui' ? $_POST['mutual_number'] : null;
 $promotion = $_POST['promotion'];
 $faculty = $_POST['faculty'];
 

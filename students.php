@@ -9,7 +9,17 @@
 </head>
 <body class="bg-dark text-white">
     <div class="container mt-5">
-        <h1 class="text-center">Liste des Étudiants</h1>
+        <div class="row">
+            <div class="col-12 text-center p-4">
+                <h1>Liste des étudiants</h1>
+                <nav class="nav justify-content-center">
+                    <a class="nav-link text-white" href="index.html">Dashboard</a>
+                    <a class="nav-link text-white" href="students.php">Etudiants</a>
+                    <a class="nav-link text-white" href="courses.php">Cours</a>
+                    <a class="nav-link text-white" href="academic_year.php">Année Académique</a>
+                </nav>
+            </div>
+        </div>
         <div class="d-flex justify-content-end">
             <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#createStudentModal">Créer</button>
         </div>
@@ -32,7 +42,6 @@
         </table>
     </div>
 
-    <!-- Modal pour créer un étudiant -->
     <!-- Modal pour créer un étudiant -->
 <div class="modal fade" id="createStudentModal" tabindex="-1" aria-labelledby="createStudentModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -158,7 +167,7 @@
 
     <!-- Modal pour la confirmation de suppression -->
     <div class="modal fade" id="deleteStudentModal" tabindex="-1" aria-labelledby="deleteStudentModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content bg-light text-dark">
                 <div class="modal-header">
                     <h5 class="modal-title" id="deleteStudentModalLabel">Supprimer un Étudiant</h5>

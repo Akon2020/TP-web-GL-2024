@@ -1,18 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
 body {
-    background-color: #101923;
-    color: #fff;
+  background-color: #101923;
+  color: #fff;
 }
 
 .table {
-    background-color: #101923;
-    color: #fff;
+  background-color: #101923;
+  color: #fff;
 }
 
 .modal-content {
-    background-color: #fff;
-    color: #101923;
+  background-color: #fff;
+  color: #101923;
 }
 
-.btn-primary, .btn-warning, .btn-danger {
-    margin-right: 10px;
+.btn-primary,
+.btn-warning,
+.btn-danger {
+  margin-right: 10px;
 }

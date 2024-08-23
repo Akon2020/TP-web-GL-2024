@@ -1,0 +1,18 @@
+body {
+    background-color: #101923;
+    color: #fff;
+}
+
+.table {
+    background-color: #101923;
+    color: #fff;
+}
+
+.modal-content {
+    background-color: #fff;
+    color: #101923;
+}
+
+.btn-primary, .btn-warning, .btn-danger {
+    margin-right: 10px;
+}

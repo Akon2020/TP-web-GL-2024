@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des Années Académiques</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <div class="container-fluid bg-dark text-white min-vh-100">
@@ -23,7 +25,7 @@
         <div class="row p-4">
             <div class="col-12">
                 <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#createAcademicYearModal">Ajouter une année académique</button>
-                <table class="table table-striped">
+                <table class="table table-bordered table-dark">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -110,6 +112,7 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

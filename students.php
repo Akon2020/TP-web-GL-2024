@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StuGest - Etudiants</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-dark text-white">
+<body class="text-white">
     <div class="container mt-5">
         <div class="row">
             <div class="col-12 text-center p-4">
@@ -21,7 +22,7 @@
             </div>
         </div>
         <div class="d-flex justify-content-end">
-            <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#createStudentModal">Créer</button>
+            <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#createStudentModal">Enregistrer un étudiant</button>
         </div>
         <table class="table table-bordered table-dark">
             <thead>
@@ -33,6 +34,7 @@
                     <th>Numéro Mutuel</th>
                     <th>Promotion</th>
                     <th>Faculté</th>
+                    <th>Année acad</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -151,13 +153,32 @@
                             <input type="text" class="form-control" id="editMutualNumber" name="mutual_number">
                         </div>
                         <div class="mb-3">
-                            <label for="editPromotion" class="form-label">Promotion</label>
-                            <input type="text" class="form-control" id="editPromotion" name="promotion" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="editFaculty" class="form-label">Faculté</label>
-                            <input type="text" class="form-control" id="editFaculty" name="faculty" required>
-                        </div>
+                        <label for="promotion" class="form-label">Promotion</label>
+                        <select class="form-select" id="promotion" name="promotion" required>
+                            <option value="Bac 1">Bac 1</option>
+                            <option value="Bac 2">Bac 2</option>
+                            <option value="Bac 3">Bac 3</option>
+                            <option value="Bac 4">Bac 4</option>
+                            <option value="L1">L1</option>
+                            <option value="L2">L2</option>
+                            <option value="M1">M1</option>
+                            <option value="M2">M2</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="faculty" class="form-label">Faculté</label>
+                        <select class="form-select" id="faculty" name="faculty" required>
+                            <option value="Sciences informatique">Sciences informatique</option>
+                            <option value="Génie logiciel">Génie logiciel</option>
+                            <option value="Système informatique">Système informatique</option>
+                            <option value="Economie">Economie</option>
+                            <option value="Agronomie">Agronomie</option>
+                            <option value="Architecture">Architecture</option>
+                            <option value="Environnement">Environnement</option>
+                            <option value="Sciences sociales">Sciences sociales</option>
+                            <option value="Droit">Droit</option>
+                        </select>
+                    </div>
                         <button type="submit" class="btn btn-primary">Mettre à jour</button>
                     </form>
                 </div>
@@ -186,6 +207,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

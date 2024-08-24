@@ -11,6 +11,18 @@ $(document).ready(function () {
 
   loadStudents();
 
+  function loadYear() {
+    $.ajax({
+      url: "fetch_year.php",
+      type: "GET",
+      success: function (data) {
+        $("#academicYearTableBody").html(data);
+      },
+    });
+  }
+
+  loadYear();
+
   $("#createStudentForm").on("submit", function (e) {
     e.preventDefault();
     $.ajax({
@@ -91,4 +103,50 @@ $(document).ready(function () {
       $("#mutualNumber").val("");
     }
   });
+
+  $("#addAcademicYearForm").on("submit", function (event) {
+    event.preventDefault();
+    $.ajax({
+      url: "add_academic_year.php",
+      type: "POST",
+      data: $(this).serialize(),
+      success: function (response) {
+        alert(response);
+        location.reload(); // Recharger la page après l'ajout
+      },
+    });
+  });
+
+   $(".editAcademicYearBtn").on("click", function () {
+     let id = $(this).data("id");
+     let startYear = $(this).data("startyear");
+     let endYear = $(this).data("endyear");
+     $("#editAcademicYearId").val(id);
+     $("#editStartYear").val(startYear);
+     $("#editEndYear").val(endYear);
+     $("#editAcademicYearModal").modal("show");
+   });
+
+   // Modifier une année académique
+   $("#editAcademicYearForm").on("submit", function (event) {
+     event.preventDefault();
+     $.ajax({
+       url: "edit_academic_year.php",
+       type: "POST",
+       data: $(this).serialize(),
+       success: function (response) {
+         alert(response);
+         location.reload(); // Recharger la page après la mise à jour
+       },
+     });
+   });
+
+   // Ouvrir le modal de suppression d'année académique
+   $(".deleteAcademicYearBtn").on("click", function () {
+     let id = $(this).data("id");
+     let yearRange = $(this).data("yearrange");
+     $("#deleteAcademicYearName").text(yearRange);
+     $("#confirmDeleteAcademicYear").data("id", id);
+     $("#deleteAcademicYearModal").modal("show");
+   });
 });

@@ -9,6 +9,7 @@ while ($row = $result->fetch_assoc()) {
             <td>{$row['id']}</td>
             <td>{$row['start_year']}</td>
             <td>{$row['end_year']}</td>
+            <td>
                 <button class='btn btn-warning edit-btn' data-id='{$row['id']}'>Modifier</button>
                 <button class='btn btn-danger delete-btn' data-id='{$row['id']}' data-name='{$row['start_year']}'>Supprimer</button>
             </td>

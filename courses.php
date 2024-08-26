@@ -23,7 +23,7 @@
         <div class="row p-4">
             <div class="col-12">
                 <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#createCourseModal">Ajouter un cours</button>
-                <table class="table table-striped">
+                <table class="table table-bordered table-dark">
                     <thead>
                         <tr>
                             <th>Code</th>

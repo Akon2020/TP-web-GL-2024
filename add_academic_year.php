@@ -1,25 +1,19 @@
 <?php
-// add_academic_year.php
-include 'db.php'; // Remplacez par le chemin correct de votre fichier de connexion à la base de données
+include 'db.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $start_year = $_POST['start_year'];
-    $end_year = $_POST['end_year'];
+$name = $_POST['name'];
+$second_name = $_POST['second_name'];
+$birth_date = $_POST['birth_date'];
+$mutual_number = $_POST['mutual_number'];
+$promotion = $_POST['promotion'];
+$faculty = $_POST['faculty'];
 
-    // Validation basique
-    if (is_numeric($start_year) && is_numeric($end_year)) {
-        $stmt = $conn->prepare("INSERT INTO academics_years (start_year, end_year) VALUES (?, ?)");
-        $stmt->bind_param("ii", $start_year, $end_year);
+$query = "INSERT INTO students (name, second_name, birth_date, mutual_number, promotion, faculty) VALUES ('$name', '$second_name', '$birth_date', '$mutual_number', '$promotion', '$faculty')";
 
-        if ($stmt->execute()) {
-            echo "Année académique ajoutée avec succès.";
-        } else {
-            echo "Erreur lors de l'ajout de l'année académique : " . $conn->error;
-        }
-        $stmt->close();
-    } else {
-        echo "Veuillez entrer des années valides.";
-    }
+if ($conn->query($query) === TRUE) {
+    echo "Nouvel étudiant ajouté avec succès";
+} else {
+    echo "Erreur: " . $query . "<br>" . $conn->error;
 }
 
 $conn->close();

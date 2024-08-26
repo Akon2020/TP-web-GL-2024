@@ -24,11 +24,10 @@ body {
 .btn-danger {
   margin-right: 10px;
 }
-.testy,
+/* .testy,
 #testy {
-  background-color: red;
   height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */

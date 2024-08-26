@@ -39,12 +39,12 @@
                 </tr>
             </thead>
             <tbody id="studentTableBody">
-                <!-- Les données des étudiants seront chargées ici -->
+
             </tbody>
         </table>
     </div>
 
-    <!-- Modal pour créer un étudiant -->
+
 <div class="modal fade" id="createStudentModal" tabindex="-1" aria-labelledby="createStudentModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content bg-light text-dark">
@@ -104,17 +104,17 @@
                             <option value="Droit">Droit</option>
                         </select>
                     </div>
-                    <!-- Sélection de l'année académique et de la session -->
+
                     <div class="mb-3">
                         <label for="academic_year" class="form-label">Année Académique</label>
                         <select class="form-select" id="academic_year" name="academic_year" required>
-                            <!-- Options seront générées dynamiquement à partir de la base de données -->
+
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="session" class="form-label">Session</label>
                         <select class="form-select" id="session" name="session" required>
-                            <!-- Options seront générées dynamiquement à partir de la base de données -->
+
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Enregistrer</button>
@@ -125,7 +125,7 @@
 </div>
 
 
-    <!-- Modal pour éditer un étudiant -->
+
     <div class="modal fade" id="editStudentModal" tabindex="-1" aria-labelledby="editStudentModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-light text-dark">
@@ -186,7 +186,7 @@
         </div>
     </div>
 
-    <!-- Modal pour la confirmation de suppression -->
+
     <div class="modal fade" id="deleteStudentModal" tabindex="-1" aria-labelledby="deleteStudentModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content bg-light text-dark">

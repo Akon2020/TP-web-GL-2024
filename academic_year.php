@@ -35,14 +35,14 @@
                         </tr>
                     </thead>
                     <tbody id="academicYearTableBody">
-                        <!-- Les années académiques seront chargées ici par AJAX -->
+
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 
-    <!-- Modal pour ajouter une année académique -->
+
     <div class="modal fade" id="createAcademicYearModal" tabindex="-1" aria-labelledby="createAcademicYearModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -67,7 +67,7 @@
         </div>
     </div>
 
-    <!-- Modal pour éditer une année académique -->
+
     <div class="modal fade" id="editAcademicYearModal" tabindex="-1" aria-labelledby="editAcademicYearModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -93,7 +93,7 @@
         </div>
     </div>
 
-    <!-- Modal pour supprimer une année académique -->
+
     <div class="modal fade" id="deleteAcademicYearModal" tabindex="-1" aria-labelledby="deleteAcademicYearModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">

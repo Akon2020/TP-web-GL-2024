@@ -36,14 +36,14 @@
                         </tr>
                     </thead>
                     <tbody id="courseTableBody">
-                        <!-- Les cours seront chargés ici par AJAX -->
+                        
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 
-    <!-- Modal pour ajouter un cours -->
+    
     <div class="modal fade" id="createCourseModal" tabindex="-1" aria-labelledby="createCourseModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -72,7 +72,7 @@
         </div>
     </div>
 
-    <!-- Modal pour éditer un cours -->
+    
     <div class="modal fade" id="editCourseModal" tabindex="-1" aria-labelledby="editCourseModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -98,7 +98,7 @@
         </div>
     </div>
 
-    <!-- Modal pour supprimer un cours -->
+    
     <div class="modal fade" id="deleteCourseModal" tabindex="-1" aria-labelledby="deleteCourseModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -123,10 +123,8 @@
 
     <script>
         $(document).ready(function() {
-            // Charger les cours
             loadCourses();
 
-            // Ajouter un cours
             $('#createCourseForm').submit(function(e) {
                 e.preventDefault();
                 $.post('create_course.php', $(this).serialize(), function(response) {
@@ -136,7 +134,6 @@
                 });
             });
 
-            // Modifier un cours
             $(document).on('click', '.edit-btn', function() {
                 const courseCode = $(this).data('id');
                 $.get('get_course.php', { coursecode: courseCode }, function(data) {
@@ -148,7 +145,6 @@
                 });
             });
 
-            // Soumettre la modification du cours
             $('#editCourseForm').submit(function(e) {
                 e.preventDefault();
                 $.post('update_course.php', $(this).serialize(), function(response) {
@@ -158,7 +154,6 @@
                 });
             });
 
-            // Supprimer un cours
             $(document).on('click', '.delete-btn', function() {
                 const courseCode = $(this).data('id');
                 const courseName = $(this).data('name');
@@ -174,7 +169,6 @@
             });
         });
 
-        // Fonction pour charger les cours via AJAX
         function loadCourses() {
             $.get('fetch_courses.php', function(data) {
                 $('#courseTableBody').html(data);

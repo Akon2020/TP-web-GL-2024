@@ -150,7 +150,7 @@ $(document).ready(function () {
       data: $(this).serialize(),
       success: function (response) {
         alert(response);
-        location.reload(); // Recharger la page après l'ajout
+        location.reload();
       },
     });
   });
@@ -165,7 +165,6 @@ $(document).ready(function () {
     $("#editAcademicYearModal").modal("show");
   });
 
-  // Modifier une année académique
   $("#editAcademicYearForm").on("submit", function (event) {
     event.preventDefault();
     $.ajax({
@@ -174,12 +173,11 @@ $(document).ready(function () {
       data: $(this).serialize(),
       success: function (response) {
         alert(response);
-        location.reload(); // Recharger la page après la mise à jour
+        location.reload();
       },
     });
   });
 
-  // Ouvrir le modal de suppression d'année académique
   $(".deleteAcademicYearBtn").on("click", function () {
     let id = $(this).data("id");
     let yearRange = $(this).data("yearrange");

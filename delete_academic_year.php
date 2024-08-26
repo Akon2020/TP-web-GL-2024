@@ -1,6 +1,5 @@
 <?php
-// delete_academic_year.php
-include 'db.php'; // Remplacez par le chemin correct de votre fichier de connexion à la base de données
+include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $academic_year_id = $_POST['academic_year_id'];

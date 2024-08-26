@@ -1,9 +1,9 @@
 <?php
 include 'db.php';
 
-$coursecode = $_POST['courseCode'];
-$coursename = $_POST['courseName'];
-$credits = $_POST['courseCredits'];
+$coursecode = $_POST['course_code'];
+$coursename = $_POST['course_name'];
+$credits = $_POST['credits'];
 
 $query = "INSERT INTO cours (coursecode, coursename, credits) VALUES ('$coursecode', '$coursename', '$credits')";
 

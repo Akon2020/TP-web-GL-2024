@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des Cours</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container-fluid bg-dark text-white min-vh-100">
         <div class="row">
@@ -114,6 +117,70 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Charger les cours
+            loadCourses();
+
+            // Ajouter un cours
+            $('#createCourseForm').submit(function(e) {
+                e.preventDefault();
+                $.post('create_course.php', $(this).serialize(), function(response) {
+                    alert(response);
+                    $('#createCourseModal').modal('hide');
+                    loadCourses();
+                });
+            });
+
+            // Modifier un cours
+            $(document).on('click', '.edit-btn', function() {
+                const courseCode = $(this).data('id');
+                $.get('get_course.php', { coursecode: courseCode }, function(data) {
+                    const course = JSON.parse(data);
+                    $('#editCourseCode').val(course.coursecode);
+                    $('#editCourseName').val(course.coursename);
+                    $('#editCourseCredits').val(course.credits);
+                    $('#editCourseModal').modal('show');
+                });
+            });
+
+            // Soumettre la modification du cours
+            $('#editCourseForm').submit(function(e) {
+                e.preventDefault();
+                $.post('update_course.php', $(this).serialize(), function(response) {
+                    alert(response);
+                    $('#editCourseModal').modal('hide');
+                    loadCourses();
+                });
+            });
+
+            // Supprimer un cours
+            $(document).on('click', '.delete-btn', function() {
+                const courseCode = $(this).data('id');
+                const courseName = $(this).data('name');
+                $('#deleteCourseName').text(courseName);
+                $('#deleteCourseModal').modal('show');
+                $('#confirmDeleteCourse').click(function() {
+                    $.post('delete_course.php', { coursecode: courseCode }, function(response) {
+                        alert(response);
+                        $('#deleteCourseModal').modal('hide');
+                        loadCourses();
+                    });
+                });
+            });
+        });
+
+        // Fonction pour charger les cours via AJAX
+        function loadCourses() {
+            $.get('fetch_courses.php', function(data) {
+                $('#courseTableBody').html(data);
+            });
+        }
+    </script>
 </body>
+
 </html>
